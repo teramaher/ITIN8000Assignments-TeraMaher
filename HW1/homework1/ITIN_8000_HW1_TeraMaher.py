@@ -22,17 +22,17 @@ else:
     suffix = "th"
 
 #calculate product of the month and day
-
+productCalc = month_number * day_number
 #figure out if product is odd or even number
 #if the remainder is 0 when devided by two its even
-if day_number % 2 == 0:
+if productCalc % 2 == 0:
     day_type = "even"
 #if the remainder is not its odd
 else:
     day_type = "odd"
 
 #print out the first sentence with different components
-print("Hello. Todays Date is", month_name, str(day_number) + suffix, "of", str(year_number) + ". The product of the month and day is", str(month_number * day_number)+ ", which is an", day_type, "number.")
+print("Hello. Todays Date is", month_name, str(day_number) + suffix, "of", str(year_number) + ". The product of the month and day is", str(productCalc)+ ", which is an", day_type, "number.")
 
 #print out If you counted the days this month so far you would have
 print("If you counted the days this month so far you would have")
