@@ -1,5 +1,7 @@
 
 from datetime import datetime
+#get username from user
+username = input("What is your name?")
 #set up date
 today = datetime.now()
 #take the month, day, and year from date
@@ -33,7 +35,7 @@ else:
     day_type = "odd"
 
 #print out the first sentence with different components
-print("Hello. Todays Date is", month_name, str(day_number) + suffix, "of", str(year_number) + ". The product of the month and day is", str(productCalc)+ ", which is an", day_type, "number.\n")
+print("Hello", username + ". Todays Date is", month_name, str(day_number) + suffix, "of", str(year_number) + ". The product of the month and day is", str(productCalc)+ ", which is an", day_type, "number.\n")
 
 #print out If you counted the days this month so far you would have
 print("If you counted the days this month so far you would have")
