@@ -1,3 +1,4 @@
+
 from datetime import datetime
 #set up date
 today = datetime.now()
@@ -46,3 +47,4 @@ while n <= day_number:
 #print out 'days'
 print("days")
 
+#print(os.getuid);
