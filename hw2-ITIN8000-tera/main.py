@@ -40,27 +40,41 @@ while role != "4":
             desserts.outall()
 
     #role 2, a customer
+    if role == "2":
+        #order choice
+        action = input("What do you want to do? Read \n1. Order food \n2. random choice?\n1 or 2:")
+        if action == "1":
+            reorder = "1"
+            # loop if there is none left of order and they want to order
+            while reorder == "1":
+            #order from menu
+            #ask customer what they want from menu
+                order = input("please enter what you want from menu")
+                #sort the input with regex by checking if type is in there
+                entree_order = re.findall(r"\bchicken\b|\bbeef\b|\bvegetarian\b", order.lower())
+                side_order = re.findall(r"\bsoup\b|\bsalad\b", order.lower())
+                wine_order = re.findall(r"\bmerlot\b|\bchardonnay\b|\bpinot noir\b|\brose\b", order.lower())
+                dessert_order = re.findall(r"\bflan\b|\bcreme brulee\b|\bchocolate moose\b|\bcheesecake\b", order.lower())
+                print("thank you for ordering!")
+                reorder = "2"
+                #check if entree is empty or none left and subtract if
+                if entree_order and entrees.subtract(entree_order[0]):
+                    reorder = input("sorry we are out of " + entree_order[0] + ", do you want to reorder? 1. yes 2. no:")
+                #check if side is empty or none left and subtract if
+                if side_order and sides.subtract(side_order[0]):
+                    reorder = input("sorry we are out of " + side_order[0] + ", do you want to reorder? 1. yes 2. no:")
+                #check if wine is empty or none left and subtract if
+                if wine_order and wines.subtract(wine_order[0]):
+                    reorder = input("sorry we are out of " + wine_order[0] + ", do you want to reorder? 1. yes 2. no:")
+                #check if dessert is empty or none left and subtract if
+                if dessert_order and desserts.subtract(dessert_order[0]):
+                    reorder = input("sorry we are out of " + dessert_order[0]+", do you want to reorder? 1. yes 2. no:")
 
-    #order choice
-    #loop if there is none left of order and they want to order
-    #order from menu
+                #check if dessert is empty or none left and subtract if
 
-    #ask customer what they want from menu
-
-    #sort the input with regex by checking if type is in there
-
-    #check if entree is empty or none left and subtract if
-
-    #check if side is empty or none left and subtract if
-
-    #check if wine is empty or none left and subtract if
-
-    #check if dessert is empty or none left and subtract if
-
-    #random choice
-
-
-
+        #random choice
+        if action == "2":
+            print("damn u dont know how to make decisions huh")
 
     #roll 3 the manager
     if role == "3":
@@ -89,4 +103,4 @@ while role != "4":
 
 
     #asks what role you want
-    role = input("What is your role? Your options are \n1. Waiter \n2. Customer \n3. Manager\n4. End Program\n 1, 2, or 3:")
+    role = input("What is your role? Your options are \n1. Waiter \n2. Customer \n3. Manager\n4. End Program\n 1, 2, 3, or 4:")
