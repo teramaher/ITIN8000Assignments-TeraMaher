@@ -15,7 +15,7 @@ wines = menu.Wines()
 #print welcome
 print("Hello! Welcome to my resturant! Go through by picking the number you want to do")
 #ask what role they want
-role = input("What is your role? Your options are \n1. Waiter \n2. Customer \n3. Manager\n4. End Program\n 1, 2, or 3:")
+role = input("What is your role? Your options are \n1. Waiter \n2. Customer \n3. Manager\n4. End Program\n 1, 2, 3, or 4:")
 #loop through different rolls
 while role != "4":
     #role 1, a employee
@@ -63,17 +63,30 @@ while role != "4":
 
 
     #roll 3 the manager
+    if role == "3":
+        #ask if they want to open or close
+        action = input("What do you want to do? Read \n1. Close\n2. Open?\n1 or 2:")
+        # to close:
+        if action == "1":
+            #prints out all of menu
+            entrees = menu.Entrees()
+            sides = menu.Sides()
+            desserts = menu.Desserts()
+            wines = menu.Wines()
+            # sets all menu items to zero with subtract
+            entrees.subtract("empty")
+            sides.subtract("empty")
+            desserts.subtract("empty")
+            wines.subtract("empty")
+        #to open:
+        if action == "2":
+            print("Restarting...")
+            # restart the menu file
+            os.system("python menu.py")
+            # restart the main file
+            os.system("python main.py")
+            exit()
 
-    #to open:
-
-    #restart the menu file
-    #restart the main file
-
-    #to close:
-    
-    #prints out all of menu
-
-    #sets all menu items to zero with subtract
 
     #asks what role you want
     role = input("What is your role? Your options are \n1. Waiter \n2. Customer \n3. Manager\n4. End Program\n 1, 2, or 3:")
