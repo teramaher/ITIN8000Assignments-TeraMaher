@@ -22,7 +22,7 @@ while role != "4":
 
     if role == "1":
         # ask for whole menu or different categories
-        action = input("What do you want to do? Read out the: \n1. Whole Menu \n2. Entree \n3. Wines \n4. Sides \n5. Desserts?\n1, 2, 3, or 4:")
+        action = input("What do you want to do? Read out the: \n1. Whole Menu \n2. Entree \n3. Wines \n4. Sides \n5. Desserts\n1, 2, 3, 4, or 5:")
         # print all of category by calling outall for everyone
         if action == "1":
             entrees.outall()
@@ -70,11 +70,22 @@ while role != "4":
                 if dessert_order and desserts.subtract(dessert_order[0]):
                     reorder = input("sorry we are out of " + dessert_order[0]+", do you want to reorder? 1. yes 2. no:")
 
-                #check if dessert is empty or none left and subtract if
-
         #random choice
         if action == "2":
-            print("damn u dont know how to make decisions huh")
+
+            ran_entree = ran.choice(entrees.listRep())
+            entrees.subtract(ran_entree)
+
+            ran_side = ran.choice(sides.listRep())
+            sides.subtract(ran_side)
+
+            ran_wine = ran.choice(wines.listRep())
+            wines.subtract(ran_wine)
+
+            ran_dessert = ran.choice(desserts.listRep())
+            desserts.subtract(ran_dessert)
+
+            print("Your order for tonight is: " + ran_entree+",", ran_side+",", ran_wine+",",ran_dessert)
 
     #roll 3 the manager
     if role == "3":
@@ -83,10 +94,10 @@ while role != "4":
         # to close:
         if action == "1":
             #prints out all of menu
-            entrees = menu.Entrees()
-            sides = menu.Sides()
-            desserts = menu.Desserts()
-            wines = menu.Wines()
+            print(entrees.outall())
+            print(sides.outall())
+            print(wines.outall())
+            print(desserts.outall())
             # sets all menu items to zero with subtract
             entrees.subtract("empty")
             sides.subtract("empty")
