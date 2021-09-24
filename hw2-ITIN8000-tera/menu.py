@@ -42,7 +42,7 @@ class Entrees:
     #OUTALL function
     #print plate and the amount of plate left
     def outall(self):
-        print("chicken: " + str(self.vegAmount))
+        print("chicken: " + str(self.chickenAmount))
         print("beef: " + str(self.beefAmount))
         print("vegetarian: " + str(self.vegAmount))
 
