@@ -42,7 +42,7 @@ while role != "4":
     #role 2, a customer
     if role == "2":
         #order choice
-        action = input("What do you want to do? Read \n1. Order food \n2. random choice?\n1 or 2:")
+        action = input("What do you want to do? \n1. Order food \n2. random choice?\n1 or 2:")
         if action == "1":
             reorder = "1"
             # loop if there is none left of order and they want to order
@@ -72,25 +72,33 @@ while role != "4":
 
         #random choice
         if action == "2":
+            print("your dinner will be:")
+            if entrees.listRep():
+                ran_entree = ran.choice(entrees.listRep())
+                entrees.subtract(ran_entree)
+                print(ran_entree)
 
-            ran_entree = ran.choice(entrees.listRep())
-            entrees.subtract(ran_entree)
+            if sides.listRep():
+                ran_side = ran.choice(sides.listRep())
+                sides.subtract(ran_side)
+                print(ran_side)
 
-            ran_side = ran.choice(sides.listRep())
-            sides.subtract(ran_side)
+            if wines.listRep():
+                ran_wine = ran.choice(wines.listRep())
+                wines.subtract(ran_wine)
+                print(ran_wine)
 
-            ran_wine = ran.choice(wines.listRep())
-            wines.subtract(ran_wine)
+            if desserts.listRep():
+                ran_dessert = ran.choice(desserts.listRep())
+                desserts.subtract(ran_dessert)
+                print(ran_dessert)
 
-            ran_dessert = ran.choice(desserts.listRep())
-            desserts.subtract(ran_dessert)
-
-            print("Your order for tonight is: " + ran_entree+",", ran_side+",", ran_wine+",",ran_dessert)
+            #print("Your order for tonight is: " + ran_entree+",", ran_side+",", ran_wine+",",ran_dessert)
 
     #roll 3 the manager
     if role == "3":
         #ask if they want to open or close
-        action = input("What do you want to do? Read \n1. Close\n2. Open?\n1 or 2:")
+        action = input("What do you want to do? \n1. Close\n2. Open?\n1 or 2:")
         # to close:
         if action == "1":
             #prints out all of menu
