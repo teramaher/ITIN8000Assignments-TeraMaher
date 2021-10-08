@@ -32,9 +32,12 @@ fout.write(daysbyte)
 fout.close()
 
 #Add the user to a CSV file named UserData.csv in the order Last Name, First Name, Favorite Color, Days Old
-# creating a csv writer object
-
-# writing the fields
-#closeing file
+with open('UserData.csv', 'w') as csvfile:
+    # creating a csv writer object
+    csvwriter = csv.writer(csvfile)
+    # writing the fields
+    csvwriter.writerow([lname, fname, color, daysold])
+    #closing file
+    csvfile.close()
 
 
