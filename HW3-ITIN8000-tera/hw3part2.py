@@ -23,15 +23,20 @@ def make_json(dcFilePath, jsonFilePath, marvelFilePath):
             data[rows['name']] = {'Ownership': 'DC', 'Characteristic': characteristic}
 
     #do the same opening but with marvel
-
+    with open(marvelFilePath, encoding='utf-8') as csvf:
         #translate to dict
-
+        csvReader = csv.DictReader(csvf)
         #go through all the rows
-
-
+        for rows in csvReader:
         #take the alignment, eyes, hair, and sex to put in characteristic dict
-
-        #add the characteristic and ownership to the character
+            characteristic = {
+                'ALIGN': rows['ALIGN'],
+                'EYE': rows['EYE'],
+                'HAIR': rows['HAIR'],
+                'SEX': rows['SEX'],
+            }
+            #add the characteristic and ownership to the character
+            data[rows['name']] = {'Ownership': 'Marvel', 'Characteristic': characteristic}
 
     #add the hiarchy of the character name
     publisher = {'Character Name': data}
