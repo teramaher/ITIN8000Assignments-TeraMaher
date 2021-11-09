@@ -42,15 +42,107 @@ plt.ylim(y_min, y_max)
 plt.xticks(())
 plt.yticks(())
 
-plt.scatter(X[:, 1], X[:, 3], c=y, cmap=plt.cm.Set1, edgecolor="k")
-plt.xlabel("Sepal length")
-plt.ylabel("Sepal width")
+
+
+
+
+#sepal width bottom petal length left
+x_min, x_max = X[:, 1].min() - 0.5, X[:, 1].max() + 0.5
+y_min, y_max = X[:, 2].min() - 0.5, X[:, 2].max() + 0.5
+
+plt.figure(3, figsize=(8, 6))
+plt.clf()
+
+# Plot the training points
+plt.scatter(X[:, 1], X[:, 2], c=y, cmap=plt.cm.Set1, edgecolor="k")
+plt.xlabel("Sepal width")
+plt.ylabel("Petal length")
 
 
 plt.xlim(x_min, x_max)
 plt.ylim(y_min, y_max)
 plt.xticks(())
 plt.yticks(())
+"""
+"""
+#petal length bottom petal width left
+x_min, x_max = X[:, 2].min() - 0.5, X[:, 2].max() + 0.5
+y_min, y_max = X[:, 3].min() - 0.5, X[:, 3].max() + 0.5
+
+plt.figure(4, figsize=(8, 6))
+plt.clf()
+
+# Plot the training points
+plt.scatter(X[:, 2], X[:, 3], c=y, cmap=plt.cm.Set1, edgecolor="k")
+plt.xlabel("Petal length")
+plt.ylabel("Petal width")
+
+
+plt.xlim(x_min, x_max)
+plt.ylim(y_min, y_max)
+plt.xticks(())
+plt.yticks(())
+"""
+"""
+#sepal length bottom petal length left
+x_min, x_max = X[:, 0].min() - 0.5, X[:, 0].max() + 0.5
+y_min, y_max = X[:, 2].min() - 0.5, X[:, 2].max() + 0.5
+
+plt.figure(5, figsize=(8, 6))
+plt.clf()
+
+# Plot the training points
+plt.scatter(X[:, 0], X[:, 2], c=y, cmap=plt.cm.Set1, edgecolor="k")
+plt.xlabel("Sepal length")
+plt.ylabel("Petal length")
+
+
+plt.xlim(x_min, x_max)
+plt.ylim(y_min, y_max)
+plt.xticks(())
+plt.yticks(())
+"""
+"""
+#sepal length bottom petal width left
+x_min, x_max = X[:, 0].min() - 0.5, X[:, 0].max() + 0.5
+y_min, y_max = X[:, 3].min() - 0.5, X[:, 3].max() + 0.5
+
+plt.figure(6, figsize=(8, 6))
+plt.clf()
+
+# Plot the training points
+plt.scatter(X[:, 0], X[:, 3], c=y, cmap=plt.cm.Set1, edgecolor="k")
+plt.xlabel("Sepal length")
+plt.ylabel("Petal width")
+
+
+plt.xlim(x_min, x_max)
+plt.ylim(y_min, y_max)
+plt.xticks(())
+plt.yticks(())
+"""
+"""
+#sepal width bottom petal width left
+x_min, x_max = X[:, 1].min() - 0.5, X[:, 1].max() + 0.5
+y_min, y_max = X[:, 3].min() - 0.5, X[:, 3].max() + 0.5
+
+plt.figure(7, figsize=(8, 6))
+plt.clf()
+
+# Plot the training points
+plt.scatter(X[:, 1], X[:, 3], c=y, cmap=plt.cm.Set1, edgecolor="k")
+plt.xlabel("Sepal width")
+plt.ylabel("Petal width")
+
+
+plt.xlim(x_min, x_max)
+plt.ylim(y_min, y_max)
+plt.xticks(())
+plt.yticks(())
+
+
+
+
 """
 # To getter a better understanding of interaction of the dimensions
 # plot the first three PCA dimensions
@@ -74,4 +166,11 @@ ax.w_yaxis.set_ticklabels([])
 ax.set_zlabel("3rd eigenvector")
 ax.w_zaxis.set_ticklabels([])
 """
+
+
+
+
+
+
+
 plt.show()
