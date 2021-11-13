@@ -21,16 +21,5 @@ for k in range:
     y_pred = knn.predict(X_test)
     scores[k] = metrics.accuracy_score(y_test, y_pred)
     #scores_list.append(metrics.accuracy_score(y_test,y_pred))
-    print(metrics.accuracy_score(y_test,y_pred))
+    print("{:.0%}".format(metrics.accuracy_score(y_test,y_pred)))
 
-"""
-knn = KNeighborsClassifier(n_neighbors=5)
-knn.fit(X,y)
-classes = {0:'setosa', 1:'versicolor', 2:'virginica'}
-
-x_new = [[3,4,5,2], [5,4,2,2]]
-y_predict = knn.predict(x_new)
-
-print(classes[y_predict[0]])
-print(classes[y_predict[1]])
-"""
